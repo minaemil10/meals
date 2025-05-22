@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:meals/models/meal.dart';
+import 'package:meals/providers/favourites_provider.dart';
 import 'package:meals/providers/meals_provider.dart';
 import 'package:meals/screens/categories_screen.dart';
 import 'package:meals/screens/filters_screen.dart';
@@ -23,29 +23,8 @@ class TabsScreen extends ConsumerStatefulWidget {
 
 class _TabsScreenState extends ConsumerState<TabsScreen> {
   var _currentIndex = 0;
-  final List<Meal> favouriteMeals = [];
   Map<Filters, bool> _activeFilters = kinitialfilters;
 
-  void showModelFavourite(String message) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(message)));
-  }
-
-  void _toggleFavouriteMeal(Meal meal) {
-    final isFavourite = favouriteMeals.contains(meal);
-    if (isFavourite) {
-      setState(() {
-        favouriteMeals.remove(meal);
-      });
-      showModelFavourite('Meal removed From Favourites');
-    } else {
-      setState(() {
-        favouriteMeals.add(meal);
-      });
-      showModelFavourite('Meal Added to Favourites');
-    }
-  }
 
   void _onChooseTab(var index) {
     setState(() {
@@ -88,15 +67,14 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
         }).toList();
 
     Widget activeScreen = CategoriesScreen(
-      onFavouriteMeal: _toggleFavouriteMeal,
       filteredmeals: filteredmeals,
     );
     var title = 'Categories';
 
     if (_currentIndex == 1) {
+      final favouriteMeals = ref.watch(favouritesprovider);
       activeScreen = MealsScreen(
         meals: favouriteMeals,
-        onFavouriteMeal: _toggleFavouriteMeal,
       );
       title = 'Favourites';
     }

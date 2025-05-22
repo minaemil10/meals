@@ -16,12 +16,13 @@ class MealDetailsScreen extends ConsumerWidget {
           IconButton(
             onPressed: () {
               final isFavourite = ref
-                  .watch(favouritesprovider.notifier)
+                  .read(favouritesprovider.notifier)
                   .toggleFavouriteMeal(meal);
               final message =
                   isFavourite
                       ? 'Meal Added to Favourites'
                       : 'Meal removed From Favourites';
+              ScaffoldMessenger.of(context).clearSnackBars();
               ScaffoldMessenger.of(
                 context,
               ).showSnackBar(SnackBar(content: Text(message)));

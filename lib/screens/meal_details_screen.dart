@@ -50,11 +50,14 @@ class MealDetailsScreen extends ConsumerWidget {
           padding: const EdgeInsets.only(bottom: 20),
           child: Column(
             children: [
-              Image.network(
-                meal.imageUrl,
-                height: 300,
-                fit: BoxFit.cover,
-                width: double.infinity,
+              Hero(
+                tag: meal.id,
+                child: Image.network(
+                  meal.imageUrl,
+                  height: 300,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
               ),
               SizedBox(height: 14),
               Text(

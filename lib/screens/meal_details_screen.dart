@@ -29,7 +29,19 @@ class MealDetailsScreen extends ConsumerWidget {
                 context,
               ).showSnackBar(SnackBar(content: Text(message)));
             },
-            icon: Icon(isFavourite ? Icons.star : Icons.star_border),
+            icon: AnimatedSwitcher(
+              duration: Duration(milliseconds: 300),
+              transitionBuilder: (child, animation) {
+                return RotationTransition(
+                  turns: Tween<double>(begin: 0.75, end: 1).animate(animation),
+                  child: child,
+                );
+              },
+              child: Icon(
+                isFavourite ? Icons.star : Icons.star_border,
+                key: ValueKey(isFavourite),
+              ),
+            ),
           ),
         ],
       ),

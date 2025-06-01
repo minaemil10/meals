@@ -1,17 +1,10 @@
 # meals
+A meals reciepes app that marks a huge milestone in my the journey to learn flutter.
 
-A new Flutter project.
-<iframe src="https://drive.google.com/file/d/1rnPtQ3hPSgtBQ0fiL0p0lxE7r8yT1HiY/preview" width="640" height="480" allow="autoplay"></iframe>
+A full preview of the app can be found here: 
+https://drive.google.com/file/d/1rnPtQ3hPSgtBQ0fiL0p0lxE7r8yT1HiY/preview
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Key features:
+1- advanced layout with widgets like gridview, listview and rows/columns.
+2- state managment with riverpod with filters and favourites features.
+3- simple intrinsic/extrinsic animations.

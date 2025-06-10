@@ -1,10 +1,18 @@
-# meals
-A meals reciepes app that marks a huge milestone in my the journey to learn flutter.
+# Meals 🍽️
+A Flutter-based recipe app that marks a milestone in my journey to master mobile development. Built with advanced layouts, Riverpod state management, and delightful animations.
 
-A full preview of the app can be found here: 
-- https://drive.google.com/file/d/1rnPtQ3hPSgtBQ0fiL0p0lxE7r8yT1HiY/preview
+## Key Features
+- **Advanced Layouts**: Dynamic UI with `GridView`, `ListView`, and flexible `Row`/`Column` designs.
+- **State Management**: Seamless filtering and favorites using Riverpod for robust global state handling.
+- **Animations**: Intrinsic animations on category screens, extrinsic Hero transitions, and rotation effects for favorites.
 
-Key features:
-- advanced layout with widgets like gridview, listview and rows/columns.
-- state managment with riverpod with filters and favourites features.
-- simple intrinsic/extrinsic animations.
+## Short Demo
+### Filtering
+https://github.com/user-attachments/assets/4306d08a-8dc4-4c0b-b012-20a5f102aa5d
+- Effortless recipe lookup with a clean, provider-separated UI and logic.
+
+### Animations & Global State 
+https://github.com/user-attachments/assets/d0ae6899-4bd3-44f1-adea-ff808d84e510
+- Intrinsic animations, Hero transitions, and rotation effects, powered by Riverpod for favorites management.
+
+
